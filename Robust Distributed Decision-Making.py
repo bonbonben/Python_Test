@@ -28,7 +28,6 @@ def result(i,Belief_Array):
     print ("Update", i,"times:", Belief_Array)
     ans=count(Belief_Array)
     print("Result:",ans)
-    converge=0
     if ans[0] == 9:
         converge=1
     elif ans[2] == 9:
