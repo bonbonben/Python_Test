@@ -48,23 +48,12 @@ for t in range(1,11):
     G.add_edge('worker9', 'worker6')
 
     Martix = np.array([[0, 0, 0.5], [0, 0.5, 1], [0.5, 1, 1]])
-
-    work1 = (random.randrange(0,3,1))/2
-    work2 = (random.randrange(0,3,1))/2
-    work3 = (random.randrange(0,3,1))/2
-    work4 = (random.randrange(0,3,1))/2
-    work5 = (random.randrange(0,3,1))/2
-    work6 = (random.randrange(0,3,1))/2
-    work7 = (random.randrange(0,3,1))/2
-    work8 = (random.randrange(0,3,1))/2
-    work9 = (random.randrange(0,3,1))/2
-
-    Belief_Array = [work1, work2, work3, work4, work5, work6, work7, work8, work9]
+    
+    Belief_Array = []
+    for work in range(1,10):
+        Belief_Array.append((random.randrange(0,3,1)) / 2)
 
     array = [1,2,3,4,5,6,7,8,9]
-    result = []
-
-    elarge = [(u, v) for (u, v, d) in G.edges(data=True)]
 
     # positions for all nodes
     pos = nx.spring_layout(G)
@@ -73,6 +62,7 @@ for t in range(1,11):
     nx.draw_networkx_nodes(G, pos, node_size=400)
 
     # edges
+    elarge = [(u, v) for (u, v, d) in G.edges(data=True)]
     nx.draw_networkx_edges(G, pos, edgelist=elarge, width=6, alpha=0.5, edge_color='k', style='solid')
 
     # labels
@@ -84,12 +74,10 @@ for t in range(1,11):
 
     print ("No.", t,"experiment:")
     print("Original Belief_Array:",Belief_Array)
-    for i in range(1,151):
+    for i in range(1,1000):
         x=random.choice(array)
         if x==1:
-            a= Martix[int(2*work1),int(2*work7)]
-            work1 = a
-            work7 = a
+            a= Martix[int(2*Belief_Array[0]),int(2*Belief_Array[6])]
             Belief_Array[0]=a
             Belief_Array[6]=a
             print ("Update", i,"times:", Belief_Array)
@@ -106,9 +94,7 @@ for t in range(1,11):
                 pass
             
         elif x==2:
-            b= Martix[int(2*work2),int(2*work7)]
-            work2 = b
-            work7 = b
+            b= Martix[int(2*Belief_Array[1]),int(2*Belief_Array[6])]
             Belief_Array[1]=b
             Belief_Array[6]=b
             print ("Update", i,"times:", Belief_Array)
@@ -124,9 +110,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==3:
-            c= Martix[int(2*work3),int(2*work7)]
-            work3 = c
-            work7 = c
+            c= Martix[int(2*Belief_Array[2]),int(2*Belief_Array[6])]
             Belief_Array[2]=c
             Belief_Array[6]=c
             print ("Update", i,"times:", Belief_Array)
@@ -142,9 +126,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==4:
-            d= Martix[int(2*work4),int(2*work8)]
-            work4 = d
-            work8 = d
+            d= Martix[int(2*Belief_Array[3]),int(2*Belief_Array[7])]
             Belief_Array[3]=d
             Belief_Array[7]=d
             print ("Update", i,"times:", Belief_Array)
@@ -160,9 +142,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==5:
-            e= Martix[int(2*work5),int(2*work8)]
-            work5 = e
-            work8 = e
+            e= Martix[int(2*Belief_Array[4]),int(2*Belief_Array[7])]
             Belief_Array[4]=e
             Belief_Array[7]=e
             print ("Update", i,"times:", Belief_Array)
@@ -178,9 +158,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==6:
-            f= Martix[int(2*work6),int(2*work9)]
-            work6 = f
-            work9 = f
+            f= Martix[int(2*Belief_Array[5]),int(2*Belief_Array[8])]
             Belief_Array[5]=f
             Belief_Array[8]=f
             print ("Update", i,"times:", Belief_Array)
@@ -196,9 +174,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==7:
-            g= Martix[int(2*work7),int(2*work8)]
-            work7 = g
-            work8 = g
+            g= Martix[int(2*Belief_Array[6]),int(2*Belief_Array[7])]
             Belief_Array[6]=g
             Belief_Array[7]=g
             print ("Update", i,"times:", Belief_Array)
@@ -214,9 +190,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==8:
-            h= Martix[int(2*work8),int(2*work9)]
-            work8 = h
-            work9 = h
+            h= Martix[int(2*Belief_Array[7]),int(2*Belief_Array[8])]
             Belief_Array[7]=h
             Belief_Array[8]=h
             print ("Update", i,"times:", Belief_Array)
@@ -232,9 +206,7 @@ for t in range(1,11):
             else:
                 pass
         else:
-            j= Martix[int(2*work7),int(2*work9)]
-            work7 = j
-            work9 = j
+            j= Martix[int(2*Belief_Array[6]),int(2*Belief_Array[8])]
             Belief_Array[6]=j
             Belief_Array[8]=j
             print ("Update", i,"times:", Belief_Array)
