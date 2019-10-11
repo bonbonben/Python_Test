@@ -49,25 +49,15 @@ for t in range(1,11):
 
     Martix = np.array([[0, 0, 0.5], [0, 0.5, 1], [0.5, 1, 1]])
 
-    work11 = (random.randrange(0,3,1))
-    work21 = (random.randrange(0,3,1))
-    work31 = (random.randrange(0,3,1))
-    work41 = (random.randrange(0,3,1))
-    work51 = (random.randrange(0,3,1))
-    work61 = (random.randrange(0,3,1))
-    work71 = (random.randrange(0,3,1))
-    work81 = (random.randrange(0,3,1))
-    work91 = (random.randrange(0,3,1))
-
-    work1 = work11/2
-    work2 = work21/2
-    work3 = work31/2
-    work4 = work41/2
-    work5 = work51/2
-    work6 = work61/2
-    work7 = work71/2
-    work8 = work81/2
-    work9 = work91/2
+    work1 = (random.randrange(0,3,1))/2
+    work2 = (random.randrange(0,3,1))/2
+    work3 = (random.randrange(0,3,1))/2
+    work4 = (random.randrange(0,3,1))/2
+    work5 = (random.randrange(0,3,1))/2
+    work6 = (random.randrange(0,3,1))/2
+    work7 = (random.randrange(0,3,1))/2
+    work8 = (random.randrange(0,3,1))/2
+    work9 = (random.randrange(0,3,1))/2
 
     Belief_Array = [work1, work2, work3, work4, work5, work6, work7, work8, work9]
 
@@ -97,10 +87,7 @@ for t in range(1,11):
     for i in range(1,151):
         x=random.choice(array)
         if x==1:
-            if(i==1):
-                a= Martix[work11,work71]
-            else:
-                a= Martix[int(2*work1),int(2*work7)]
+            a= Martix[int(2*work1),int(2*work7)]
             work1 = a
             work7 = a
             Belief_Array[0]=a
@@ -119,10 +106,7 @@ for t in range(1,11):
                 pass
             
         elif x==2:
-            if(i==1):
-                b= Martix[work21,work71]
-            else:
-                b= Martix[int(2*work2),int(2*work7)]
+            b= Martix[int(2*work2),int(2*work7)]
             work2 = b
             work7 = b
             Belief_Array[1]=b
@@ -140,10 +124,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==3:
-            if(i==1):
-                c= Martix[work31,work71]
-            else:
-                c= Martix[int(2*work3),int(2*work7)]
+            c= Martix[int(2*work3),int(2*work7)]
             work3 = c
             work7 = c
             Belief_Array[2]=c
@@ -161,10 +142,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==4:
-            if(i==1):
-                d= Martix[work41,work81]
-            else:
-                d= Martix[int(2*work4),int(2*work8)]
+            d= Martix[int(2*work4),int(2*work8)]
             work4 = d
             work8 = d
             Belief_Array[3]=d
@@ -182,10 +160,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==5:
-            if(i==1):
-                e= Martix[work51,work81]
-            else:
-                e= Martix[int(2*work5),int(2*work8)]
+            e= Martix[int(2*work5),int(2*work8)]
             work5 = e
             work8 = e
             Belief_Array[4]=e
@@ -203,10 +178,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==6:
-            if(i==1):
-                f= Martix[work61,work91]
-            else:
-                f= Martix[int(2*work6),int(2*work9)]
+            f= Martix[int(2*work6),int(2*work9)]
             work6 = f
             work9 = f
             Belief_Array[5]=f
@@ -224,10 +196,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==7:
-            if(i==1):
-                g= Martix[work71,work81]
-            else:
-                g= Martix[int(2*work7),int(2*work8)]
+            g= Martix[int(2*work7),int(2*work8)]
             work7 = g
             work8 = g
             Belief_Array[6]=g
@@ -245,10 +214,7 @@ for t in range(1,11):
             else:
                 pass
         elif x==8:
-            if(i==1):
-                h= Martix[work81,work91]
-            else:
-                h= Martix[int(2*work8),int(2*work9)]
+            h= Martix[int(2*work8),int(2*work9)]
             work8 = h
             work9 = h
             Belief_Array[7]=h
@@ -266,10 +232,7 @@ for t in range(1,11):
             else:
                 pass
         else:
-            if(i==1):
-                j= Martix[work71,work91]
-            else:
-                j= Martix[int(2*work7),int(2*work9)]
+            j= Martix[int(2*work7),int(2*work9)]
             work7 = j
             work9 = j
             Belief_Array[6]=j
