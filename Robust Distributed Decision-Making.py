@@ -24,7 +24,10 @@ def count(Belief_Array):
             count3+=1
     return count1,count2,count3
 
-def judge(ans):
+def result(i,Belief_Array):
+    print ("Update", i,"times:", Belief_Array)
+    ans=count(Belief_Array)
+    print("Result:",ans)
     converge=0
     if ans[0] == 9:
         converge=1
@@ -80,10 +83,7 @@ for t in range(1,11):
             a= Martix[int(2*Belief_Array[0]),int(2*Belief_Array[6])]
             Belief_Array[0]=a
             Belief_Array[6]=a
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -97,10 +97,7 @@ for t in range(1,11):
             b= Martix[int(2*Belief_Array[1]),int(2*Belief_Array[6])]
             Belief_Array[1]=b
             Belief_Array[6]=b
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -113,10 +110,7 @@ for t in range(1,11):
             c= Martix[int(2*Belief_Array[2]),int(2*Belief_Array[6])]
             Belief_Array[2]=c
             Belief_Array[6]=c
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -129,10 +123,7 @@ for t in range(1,11):
             d= Martix[int(2*Belief_Array[3]),int(2*Belief_Array[7])]
             Belief_Array[3]=d
             Belief_Array[7]=d
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -145,10 +136,7 @@ for t in range(1,11):
             e= Martix[int(2*Belief_Array[4]),int(2*Belief_Array[7])]
             Belief_Array[4]=e
             Belief_Array[7]=e
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -161,10 +149,7 @@ for t in range(1,11):
             f= Martix[int(2*Belief_Array[5]),int(2*Belief_Array[8])]
             Belief_Array[5]=f
             Belief_Array[8]=f
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -177,10 +162,7 @@ for t in range(1,11):
             g= Martix[int(2*Belief_Array[6]),int(2*Belief_Array[7])]
             Belief_Array[6]=g
             Belief_Array[7]=g
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -193,10 +175,7 @@ for t in range(1,11):
             h= Martix[int(2*Belief_Array[7]),int(2*Belief_Array[8])]
             Belief_Array[7]=h
             Belief_Array[8]=h
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
@@ -209,10 +188,7 @@ for t in range(1,11):
             j= Martix[int(2*Belief_Array[6]),int(2*Belief_Array[8])]
             Belief_Array[6]=j
             Belief_Array[8]=j
-            print ("Update", i,"times:", Belief_Array)
-            ans=count(Belief_Array)
-            print("Result:",ans)
-            converge=judge(ans)
+            converge=result(i,Belief_Array)
             if converge == 1:
                 print("Converge at 0\n")
                 break
