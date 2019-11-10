@@ -4,6 +4,7 @@
 # In[1]:
 
 
+get_ipython().run_line_magic('matplotlib', 'inline')
 import networkx as ne
 import matplotlib.pyplot as mp
 import random
@@ -15,8 +16,11 @@ import pandas as pd
 def result(i,Belief_Array):
     print ("Update",i,"times:", Belief_Array)
     ans=count(Belief_Array)
-    print("Result:",ans)
     converge=0
+    record1.append(ans[0])
+    record2.append(ans[1])
+    record3.append(ans[2])
+    print("Belief distribution:\n",record1,"\n",record2,"\n",record3)
     if ans[0] == x:
         converge=1
     elif ans[2] == x:
@@ -54,6 +58,9 @@ for t in range(1,11):                    # number of experiments is 10
     temp = 0
     Belief_Array = []
     check = 0                           # make sure all the nodes have edge
+    record1 = []
+    record2 = []
+    record3 = []
     
     for i in range(0,x):
         if rg.degree(i) == 0:
